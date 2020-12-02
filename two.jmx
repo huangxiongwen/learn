@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="惠军防癌分期" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="出单接口" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="出单接口1" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">&lt;document&gt;&lt;signature&gt;iZU9JH0JkdyfYIxOEACbd5hNdW/DzOuZpZe3Hx8b9ubFJEazSR54W548Ge25KPbrs/XJCGuTSuR05k5GB2k455vP61Guo3Bn1i+a+GXW0Oje8F4vrFv7Z4kbWCamnlaVRAyV2Q8VTub3WARKd8+2ELGWptYZ8ispS6/3eP3y/t0=&lt;/signature&gt;&lt;request&gt;&#xd;
+	  &lt;head&gt;&#xd;
+		&lt;orderNo&gt;220201130101800&lt;/orderNo&gt;&#xd;
+		&lt;function&gt;person&lt;/function&gt;&#xd;
+		&lt;agencyCode&gt;SHDD&lt;/agencyCode&gt;&#xd;
+		&lt;productCode&gt;0200485&lt;/productCode&gt;&#xd;
+		&lt;businessType&gt;proposal&lt;/businessType&gt;&#xd;
+		&lt;transTime&gt;2020-11-30 17:00:00&lt;/transTime&gt;&#xd;
+		&lt;subAgencyCode&gt;YJWX&lt;/subAgencyCode&gt;&#xd;
+	  &lt;/head&gt;&#xd;
+	  &lt;body&gt;&#xd;
+		&lt;project&gt;&#xd;
+		  &lt;projectCode&gt;0002&lt;/projectCode&gt;&#xd;
+		  &lt;projectName&gt;首月投保3元，其余分11期支付&lt;/projectName&gt;&#xd;
+		  &lt;geographicalArea&gt;00001&lt;/geographicalArea&gt;	&#xd;
+		  &lt;operateDate&gt;2020-11-30 17:00:00&lt;/operateDate&gt;&#xd;
+		  &lt;startDate&gt;2020-11-30 00:00:00&lt;/startDate&gt;&#xd;
+		  &lt;endDate&gt;2020-12-01 23:59:59&lt;/endDate&gt;&#xd;
+		  &lt;currency&gt;CNY&lt;/currency&gt;&#xd;
+		  &lt;uwCount&gt;1&lt;/uwCount&gt;&#xd;
+		  &lt;sumInsured&gt;4023000.0&lt;/sumInsured&gt;&#xd;
+		  &lt;sumPremium&gt;52.5&lt;/sumPremium&gt;&#xd;
+		&lt;/project&gt;  &#xd;
+		&lt;applicant&gt; &#xd;
+		  &lt;appliType&gt;1&lt;/appliType&gt;&#xd;
+		  &lt;appliName&gt;莫鹏&lt;/appliName&gt;&#xd;
+		  &lt;identifyType&gt;01&lt;/identifyType&gt;&#xd;
+		  &lt;identifyNumber&gt;430421198805247212&lt;/identifyNumber&gt;&#xd;
+		  &lt;sex&gt;1&lt;/sex&gt;&#xd;
+		  &lt;birthDate&gt;1988-05-24&lt;/birthDate&gt;&#xd;
+		  &lt;mobilephone&gt;18144831012&lt;/mobilephone&gt; &#xd;
+		&lt;/applicant&gt;  &#xd;
+		&lt;insureds&gt; &#xd;
+		  &lt;insured&gt; &#xd;
+			&lt;insuredType&gt;1&lt;/insuredType&gt;&#xd;
+			&lt;insuredName&gt;李四&lt;/insuredName&gt;&#xd;
+			&lt;identifyType&gt;01&lt;/identifyType&gt;&#xd;
+			&lt;identifyNumber&gt;430421198805247212&lt;/identifyNumber&gt;&#xd;
+			&lt;sex&gt;1&lt;/sex&gt;&#xd;
+			&lt;birthDate&gt;2012-04-21&lt;/birthDate&gt;&#xd;
+			&lt;appliRelation&gt;01&lt;/appliRelation&gt;&#xd;
+			&lt;mobilephone&gt;18144831012&lt;/mobilephone&gt; &#xd;
+			&lt;siInd&gt;1&lt;/siInd&gt; &#xd;
+		  &lt;/insured&gt; &#xd;
+		&lt;/insureds&gt;&#xd;
+		&lt;configInfo&gt; &#xd;
+		  &lt;payFrequency&gt;1&lt;/payFrequency&gt; &#xd;
+		&lt;/configInfo&gt;  &#xd;
+	  &lt;/body&gt;&#xd;
+	&lt;/request&gt;&lt;/document&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">car-test.etaiping.com</stringProp>
+          <stringProp name="HTTPSampler.port">6016</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/react/platform/portal/proposal</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
